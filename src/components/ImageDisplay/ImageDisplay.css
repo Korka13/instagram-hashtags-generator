@@ -1,0 +1,5 @@
+.ImageDisplay img {
+    max-width: 80vw;
+    max-height: 20vh;
+    margin: 2rem;
+}
