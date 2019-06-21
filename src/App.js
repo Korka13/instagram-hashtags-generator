@@ -27,10 +27,7 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    fetch(
-      // '/.netlify/functions/gethashtags' 
-      'http://35.224.41.139:9000/gethashtags'
-      , {
+    fetch( process.env.REACT_APP_FETCH_LINK, {
       method: 'POST',
       headers: {Accept: 'application/json',
                 'Content-Type': 'application/json'},
