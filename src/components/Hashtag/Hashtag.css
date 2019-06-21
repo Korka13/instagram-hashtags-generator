@@ -1,41 +1,5 @@
-.Hashtag {
-    position: relative;
-}
-
 .Hashtag button {
-    border: none;
     margin: 2px;
-    background: radial-gradient(circle at 33% 100%, #fff 4%, #e7e7e7 30%, #d6d6d6 62%, #d3d3d3 85%, #d1d1d1);
-}
-
-.Hashtag button:focus {
-    outline: none;
-}
-
-.Hashtag-popup {
-    padding: 5px;
-    height: 20px;
-    width: 50px;
-    color: #000;
-    border: 1px solid #bbbbbb;
-    border-radius: 6px;
-    background-color: #e6e6e6;
-    align-self: start;
-    justify-self: center;
-    position: absolute;
-    top: -40px;
-    right: calc(50% - 30px);
-}
-
-.Hashtag-popup:after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #e6e6e6 transparent transparent transparent;
 }
 
 .Tilt {

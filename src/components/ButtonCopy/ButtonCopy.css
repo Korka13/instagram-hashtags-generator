@@ -1,12 +1,12 @@
-.CopyAll {
+.ButtonCopy {
     position: relative;
 }
 
-.CopyAll button:focus {
+.ButtonCopy button:focus {
     outline: none;
 }
 
-.CopyAll-popup {
+.ButtonCopy-popup {
     padding: 5px;
     height: 20px;
     width: 50px;
@@ -21,7 +21,7 @@
     right: calc(50% - 30px);
 }
 
-.CopyAll-popup:after {
+.ButtonCopy-popup:after {
     content: "";
     position: absolute;
     top: 100%;

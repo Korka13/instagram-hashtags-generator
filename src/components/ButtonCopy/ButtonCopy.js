@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import './CopyAll.css';
+import './ButtonCopy.css';
 
-class CopyAll extends Component {
+class ButtonCopy extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,12 +20,12 @@ class CopyAll extends Component {
   }
 
   render() {
-    const {allHashtags} = this.props;
+    const {copyText, displayText} = this.props;
     return (
-      <div className="CopyAll" >
-            {this.state.copied ? <span className="CopyAll-popup">{this.state.alert}</span> : null}
+      <div className="ButtonCopy" >
+            {this.state.copied ? <span className="ButtonCopy-popup">{this.state.alert}</span> : null}
                 <CopyToClipboard 
-                text={allHashtags}
+                text={copyText}
                 onCopy={(text, result) => {
                   const msg = result ? "Copied" : "It didn't work";
                   this.setState({alert: msg})
@@ -34,7 +34,7 @@ class CopyAll extends Component {
                 >
                 
                  <button className="br-pill shadow-5 pa4 bg-light-gray">
-                  Copy all!!
+                  {displayText}
                  </button>
                 </CopyToClipboard>
       </div>
@@ -42,4 +42,4 @@ class CopyAll extends Component {
   }
 }
 
-export default CopyAll;
+export default ButtonCopy;

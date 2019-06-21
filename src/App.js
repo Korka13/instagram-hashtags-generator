@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import CopyAll from './components/CopyAll/CopyAll'
+import ButtonCopy from './components/ButtonCopy/ButtonCopy';
 import Hashtags from './components/Hashtags/Hashtags';
 import './App.css';
+
 
 const defaultImage = 'https://st.ilfattoquotidiano.it/wp-content/uploads/2018/03/03/instagram275.jpg'
 
@@ -50,7 +51,7 @@ class App extends Component {
       <div className="App">
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
         <ImageDisplay imageUrl={imageUrl} />
-        {allHashtags.length ? <CopyAll allHashtags={allHashtags} /> : null}
+        {allHashtags.length ? <ButtonCopy copyText={allHashtags} displayText="Copy All!" /> : null}
         <Hashtags hashtags={hashtags} />        
       </div>
     );
