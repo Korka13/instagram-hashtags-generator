@@ -6,12 +6,17 @@
     "clarifai": "^2.9.0",
     "dotenv": "^8.0.0",
     "netlify-lambda": "^1.4.13",
+    "prop-types": "^15.6.2",
     "querystring": "^0.2.0",
     "react": "^16.8.6",
+    "react-alert": "^5.5.0",
+    "react-alert-template-basic": "^1.0.0",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-delay": "^0.1.0",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-tilt": "^0.1.4",
+    "react-transition-group": "^2.5.3",
     "tachyons": "^4.11.1"
   },
   "scripts": {

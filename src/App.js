@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Hashtag from './components/Hashtag/Hashtag';
+import Hashtags from './components/Hashtags/Hashtags';
 import './App.css';
 
 const defaultImage = 'https://st.ilfattoquotidiano.it/wp-content/uploads/2018/03/03/instagram275.jpg'
@@ -25,7 +25,10 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    fetch('/.netlify/functions/gethashtags', {
+    fetch(
+      // '/.netlify/functions/gethashtags' 
+      'http://35.224.41.139:9000/gethashtags'
+      , {
       method: 'POST',
       headers: {Accept: 'application/json',
                 'Content-Type': 'application/json'},
@@ -45,7 +48,7 @@ class App extends Component {
       <div className="App">
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
         <ImageDisplay imageUrl={imageUrl} />
-        <Hashtag hashtags={hashtags} />        
+        <Hashtags hashtags={hashtags} />        
       </div>
     );
   }
