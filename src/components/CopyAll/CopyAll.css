@@ -1,0 +1,33 @@
+.CopyAll {
+    position: relative;
+}
+
+.CopyAll button:focus {
+    outline: none;
+}
+
+.CopyAll-popup {
+    padding: 5px;
+    height: 20px;
+    width: 50px;
+    color: #000;
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+    background-color: #e6e6e6;
+    align-self: start;
+    justify-self: center;
+    position: absolute;
+    top: -40px;
+    right: calc(50% - 30px);
+}
+
+.CopyAll-popup:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e6e6e6 transparent transparent transparent;
+}

@@ -4,7 +4,6 @@ import './Hashtags.css';
 
 
 const Hashtags = ({hashtags}) => {
-  // const allHashtags = hashtags.join(' ');
   const position = ['start', 'end', 'center'];
   const justifyRandoms = hashtags.map(h => position[Math.floor(Math.random()*position.length)])
   const alignRandoms = hashtags.map(h => position[Math.floor(Math.random()*position.length)])

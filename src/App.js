@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import CopyAll from './components/CopyAll/CopyAll'
 import Hashtags from './components/Hashtags/Hashtags';
 import './App.css';
 
@@ -44,10 +45,12 @@ class App extends Component {
 
   render() {
     const { imageUrl, hashtags } = this.state;
+    const allHashtags = hashtags.join(' ');
     return (
       <div className="App">
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
         <ImageDisplay imageUrl={imageUrl} />
+        {allHashtags.length ? <CopyAll allHashtags={allHashtags} /> : null}
         <Hashtags hashtags={hashtags} />        
       </div>
     );
