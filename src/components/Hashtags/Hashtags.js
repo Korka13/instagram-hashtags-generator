@@ -2,7 +2,6 @@ import React from 'react';
 import Hashtag from '../Hashtag/Hashtag';
 import './Hashtags.css';
 
-
 const Hashtags = ({hashtags}) => {
   const position = ['start', 'end', 'center'];
   const justifyRandoms = hashtags.map(h => position[Math.floor(Math.random()*position.length)])

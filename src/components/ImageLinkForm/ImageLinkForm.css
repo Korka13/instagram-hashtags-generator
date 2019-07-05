@@ -1,3 +1,39 @@
-.form {
-  width: 700px;
+.ImageLinkForm {
+  margin: 1rem auto;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  max-width: 80vw;
+}
+
+.ImageLinkForm-form {
+  flex-shrink: 0;
+  border: 1px solid #FF55B5;
+  margin: 0;
+  padding: 0;
+  height: calc(2rem - 2px);
+  min-width: 0;
+  vertical-align: middle;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
+
+.ImageLinkForm-button {
+  flex-shrink: 0;
+  border: 5px solid white;
+  height: 2rem;
+  width: 2rem;
+  padding: 2px;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;  
+  background-color: #FF55B5;
+}
+
+.ImageLinkForm-form:focus, .ImageLinkForm-button:focus {
+  outline: none;
+}
+
+.ImageLinkForm-button img {
+  width: 100%;
+  vertical-align: middle;
 }

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import * as Scroll from 'react-scroll';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import ButtonCopy from './components/ButtonCopy/ButtonCopy';
 import Hashtags from './components/Hashtags/Hashtags';
 import './App.css';
 
-
+const Element = Scroll.Element;
+const scroller = Scroll.scroller;
 const defaultImage = 'https://st.ilfattoquotidiano.it/wp-content/uploads/2018/03/03/instagram275.jpg'
 
 class App extends Component {
@@ -27,7 +29,7 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    fetch( process.env.REACT_APP_FETCH_LINK, {
+    fetch(process.env.REACT_APP_FETCH_LINK, {
       method: 'POST',
       headers: {Accept: 'application/json',
                 'Content-Type': 'application/json'},
@@ -37,8 +39,17 @@ class App extends Component {
     }).then(response => response.json())
       .then(response => {
         this.setState({hashtags: response['outputs'][0]['data']['concepts'].map(concept => `#${concept.name.toLowerCase().replace(" ", "").replace("(", "").replace(")", "")}`)})
-      })
+      }).then(end => this.scrollTo())
       .catch(err => console.log(err));
+  }
+
+  scrollTo() {
+    scroller.scrollTo('scroll-to-button', {
+      duration: 800,
+      delay: 1000,
+      smooth: 'easeInOutQuart',
+      offset: -5
+    })
   }
 
   render() {
@@ -46,9 +57,11 @@ class App extends Component {
     const allHashtags = hashtags.join(' ');
     return (
       <div className="App">
-        <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
+      <h1>Instagram Hashtags Generator</h1>
+      <h2>Paste a photo link and click the button to generate the hashtags!</h2>
+        <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} scrollTo={this.scrollTo} />
         <ImageDisplay imageUrl={imageUrl} />
-        {allHashtags.length ? <ButtonCopy copyText={allHashtags} displayText="Copy All!" /> : null}
+        {allHashtags.length ? <Element name="scroll-to-button"><ButtonCopy cssClass="AllHashtagsCopy" copyText={allHashtags} displayText="Click an hashtag to copy it, or click here to copy them all!" /></Element> : null}
         <Hashtags hashtags={hashtags} />        
       </div>
     );

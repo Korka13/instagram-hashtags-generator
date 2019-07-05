@@ -12,13 +12,12 @@ const Hashtag = ({justifySelf, alignSelf, hashtag}) => {
               alignSelf
             }}
             >
-            
         <Tilt              
               options={{ max : 100 }} 
-              className="Tilt br-pill"              
+              className="Tilt"              
                >
                <Delay wait={Math.random()*4000}>
-                <ButtonCopy copyText={hashtag} displayText={hashtag} />
+                <ButtonCopy copyText={hashtag} displayText={hashtag} cssClass="Hashtag-ButtonCopy" />
                </Delay>
           </Tilt>
       </div>

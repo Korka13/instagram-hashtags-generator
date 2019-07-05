@@ -1,9 +1,8 @@
 .Hashtags {
-    margin: 20px 50px;
+    margin: 0 25px;
     display: grid;
     grid-gap: 10px;
     justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-rows: 170px;
-    cursor: pointer;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    grid-auto-rows: 100px;
 }

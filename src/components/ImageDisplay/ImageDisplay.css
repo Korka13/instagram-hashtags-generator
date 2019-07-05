@@ -1,5 +1,10 @@
 .ImageDisplay img {
-    max-width: 80vw;
+    max-width: 70vw;
     max-height: 20vh;
     margin: 2rem;
+    margin-bottom: 3rem;
+    /* border: 2rem solid #F4F4F4;
+    border-radius: 1rem; */
+    box-shadow: 0 0 0 2rem #e2e1e1;
+    border-radius: .5rem;
 }

@@ -20,9 +20,9 @@ class ButtonCopy extends Component {
   }
 
   render() {
-    const {copyText, displayText} = this.props;
+    const {copyText, displayText, cssClass} = this.props;
     return (
-      <div className="ButtonCopy" >
+      <div className={`ButtonCopy ${cssClass}`} >
             {this.state.copied ? <span className="ButtonCopy-popup">{this.state.alert}</span> : null}
                 <CopyToClipboard 
                 text={copyText}
@@ -32,8 +32,7 @@ class ButtonCopy extends Component {
                   this.handlePopup()
                 }}
                 >
-                
-                 <button className="br-pill shadow-5 pa4 bg-light-gray">
+                 <button>
                   {displayText}
                  </button>
                 </CopyToClipboard>

@@ -1,17 +1,19 @@
-.Hashtag button {
-    margin: 2px;
+.Hashtag-ButtonCopy button {
+  border-radius: 50%;
+  box-shadow:inset 30px 30px 75px rgba(52, 214, 255, 0.1),
+              inset 0px 0px 15px rgba(0,0,0,.5),
+              inset 0px 0px 55px rgba(255,255,255,.5),
+              inset 3px 3px 5px rgba(52, 214, 255, 0.5),
+              0 0 50px rgba(255,255,255,.75);
+  background:rgba(255, 255, 255, 0.4);
+  border: 0;
+  font-size: 12px;
+  padding-top: calc(50% - 6px);
+  padding-bottom: calc(50% - 6px);
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-.Tilt {
-    background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-}
-
-/* .instagram {
-    background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-
-    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-
-    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
-
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+/* .Hashtag-ButtonCopy {
+  position: relative;
 } */

@@ -7,7 +7,7 @@ const ImageDisplay = ({ imageUrl }) => {
   }
   return (
     <div className='ImageDisplay'>
-        <img id="image" onError={addDefaultSrc} className="ba bw5 b--near-white br4" alt='' src={imageUrl}/>
+        <img id="image" onError={addDefaultSrc} alt='' src={imageUrl}/>
     </div>
   );
 }

@@ -1,8 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
+
 .App {
   text-align: center;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
+h1 {
+  font-family: 'Cookie', cursive;
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.AllHashtagsCopy button {
+  margin: 1rem;
+  margin-top: 0;
+  padding: .5rem;
+  background-color: #fff;
+  border: 3px solid #FF55B5;
+  border-radius: .5rem;
 }
