@@ -14,6 +14,26 @@
   padding-left: 10px;
 }
 
-/* .Hashtag-ButtonCopy {
-  position: relative;
-} */
+@media only screen and (min-width: 375px) {
+  .Hashtag-ButtonCopy button {
+    font-size: 16px;
+    padding-top: calc(50% - 8px);
+    padding-bottom: calc(50% - 8px);
+  }
+}
+
+@media only screen and (min-width: 475px) {
+  .Hashtag-ButtonCopy button {
+    font-size: 20px;
+    padding-top: calc(50% - 10px);
+    padding-bottom: calc(50% - 10px);
+  }
+}
+
+@media only screen and (min-width: 575px) {
+  .Hashtag-ButtonCopy button {
+    font-size: 22px;
+    padding-top: calc(50% - 11px);
+    padding-bottom: calc(50% - 11px);
+  }
+}

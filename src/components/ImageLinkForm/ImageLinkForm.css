@@ -37,3 +37,9 @@
   width: 100%;
   vertical-align: middle;
 }
+
+@media only screen and (min-width: 375px) {
+  .ImageLinkForm-form {
+    width: 300px;
+  }
+}
