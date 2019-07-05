@@ -4,6 +4,15 @@
   text-align: center;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 3rem;
+}
+
 h1 {
   font-family: 'Cookie', cursive;
   color: #000;

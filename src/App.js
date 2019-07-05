@@ -4,6 +4,7 @@ import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import ButtonCopy from './components/ButtonCopy/ButtonCopy';
 import Hashtags from './components/Hashtags/Hashtags';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 const Element = Scroll.Element;
@@ -57,12 +58,17 @@ class App extends Component {
     const allHashtags = hashtags.join(' ');
     return (
       <div className="App">
-      <h1>Instagram Hashtags Generator</h1>
-      <h2>Paste a photo link and click the button to generate the hashtags!</h2>
-        <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} scrollTo={this.scrollTo} />
-        <ImageDisplay imageUrl={imageUrl} />
-        {allHashtags.length ? <Element name="scroll-to-button"><ButtonCopy cssClass="AllHashtagsCopy" copyText={allHashtags} displayText="Click an hashtag to copy it, or click here to copy them all!" /></Element> : null}
-        <Hashtags hashtags={hashtags} />        
+        <div className="page-container">
+          <div className="content-wrap">
+            <h1>Instagram Hashtags Generator</h1>
+            <h2>Paste a photo link and click the button to generate the hashtags!</h2>
+            <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} scrollTo={this.scrollTo} />
+            <ImageDisplay imageUrl={imageUrl} />
+            {allHashtags.length ? <Element name="scroll-to-button"><ButtonCopy cssClass="AllHashtagsCopy" copyText={allHashtags} displayText="Click an hashtag to copy it, or click here to copy them all!" /></Element> : null}
+            <Hashtags hashtags={hashtags} />
+          </div>
+          <Footer />
+        </div>
       </div>
     );
   }
