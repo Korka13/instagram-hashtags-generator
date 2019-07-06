@@ -1,6 +1,6 @@
 .ImageLinkForm {
   margin: 1rem auto;
-  height: 2rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   max-width: 80vw;
@@ -8,11 +8,14 @@
 
 .ImageLinkForm-form {
   flex-shrink: 0;
-  border: 1px solid #FF55B5;
+  /* border: 1px solid #FF55B5; */
+  border: 1px solid #FF9E00;
   margin: 0;
   padding: 0;
-  height: calc(2rem - 2px);
+  height: calc(3rem - 2px);
   min-width: 0;
+  width: 250px;
+  font-size: 1rem;
   vertical-align: middle;
   border-top-right-radius: .5rem;
   border-bottom-right-radius: .5rem;
@@ -21,12 +24,13 @@
 .ImageLinkForm-button {
   flex-shrink: 0;
   border: 5px solid white;
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   padding: 2px;
   border-top-left-radius: 25%;
   border-bottom-left-radius: 25%;  
-  background-color: #FF55B5;
+  /* background-color: #ff55b5; */
+  background-color: #ff9e00;
 }
 
 .ImageLinkForm-form:focus, .ImageLinkForm-button:focus {
@@ -41,5 +45,11 @@
 @media only screen and (min-width: 375px) {
   .ImageLinkForm-form {
     width: 300px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .ImageLinkForm-form {
+    width: 400px;
   }
 }

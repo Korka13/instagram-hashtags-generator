@@ -9,7 +9,7 @@ import './App.css';
 
 const Element = Scroll.Element;
 const scroller = Scroll.scroller;
-const defaultImage = 'https://st.ilfattoquotidiano.it/wp-content/uploads/2018/03/03/instagram275.jpg'
+const defaultImage = 'https://ui-ex.com/images/freeswimming-clipart-swimming-animal-1.jpg'
 
 class App extends Component {
   constructor() {

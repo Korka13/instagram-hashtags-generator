@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap');
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background-color: #66F8E8;
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #3f6d70;
 
 
   /* --c : rgba(255,255,255,0.7);

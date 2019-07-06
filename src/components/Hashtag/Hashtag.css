@@ -1,13 +1,15 @@
 .Hashtag-ButtonCopy button {
   border-radius: 50%;
-  box-shadow:inset 30px 30px 75px rgba(52, 214, 255, 0.1),
+  box-shadow:inset 30px 30px 75px rgba(255, 85, 181, 0.1),
               inset 0px 0px 15px rgba(0,0,0,.5),
               inset 0px 0px 55px rgba(255,255,255,.5),
-              inset 3px 3px 5px rgba(52, 214, 255, 0.5),
-              0 0 50px rgba(255,255,255,.75);
+              inset 3px 3px 5px rgba(255, 85, 181, 0.5),
+              0 0 25px rgba(255,255,255,.75);
   background:rgba(255, 255, 255, 0.4);
   border: 0;
   font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
   padding-top: calc(50% - 6px);
   padding-bottom: calc(50% - 6px);
   padding-right: 10px;
@@ -17,6 +19,7 @@
 @media only screen and (min-width: 375px) {
   .Hashtag-ButtonCopy button {
     font-size: 16px;
+    line-height: 16px;
     padding-top: calc(50% - 8px);
     padding-bottom: calc(50% - 8px);
   }
@@ -25,6 +28,7 @@
 @media only screen and (min-width: 475px) {
   .Hashtag-ButtonCopy button {
     font-size: 20px;
+    line-height: 20px;
     padding-top: calc(50% - 10px);
     padding-bottom: calc(50% - 10px);
   }
@@ -33,7 +37,17 @@
 @media only screen and (min-width: 575px) {
   .Hashtag-ButtonCopy button {
     font-size: 22px;
+    line-height: 22px;
     padding-top: calc(50% - 11px);
     padding-bottom: calc(50% - 11px);
+  }
+}
+
+@media only screen and (min-width: 835px) {
+  .Hashtag-ButtonCopy button {
+    font-size: 26px;
+    line-height: 26px;
+    padding-top: calc(50% - 13px);
+    padding-bottom: calc(50% - 13px);
   }
 }

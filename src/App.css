@@ -15,16 +15,22 @@
 
 h1 {
   font-family: 'Cookie', cursive;
-  color: #000;
-  font-size: 2.5rem;
+  color: #fff;
+  font-size: 3.5rem;
   font-weight: 200;
   margin: 0;
   padding-top: 1rem;
+  text-decoration: underline;
+  /* text-decoration-color: #FF55B5; */
+  text-decoration-color: #FF9E00;
+  
 }
 
 h2 {
-  font-size: 1rem;
-  font-weight: 400;
+  padding: 1rem .5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
 }
 
 .AllHashtagsCopy button {
@@ -32,6 +38,23 @@ h2 {
   margin-top: 0;
   padding: .5rem;
   background-color: #fff;
-  border: 3px solid #FF55B5;
+  /* border: 3px solid #FF55B5; */
+  border: 3px solid #FF9E00;
   border-radius: .5rem;
+  font-size: 13px;
+}
+
+@media only screen and (min-width: 475px) {
+  .AllHashtagsCopy button {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
 }

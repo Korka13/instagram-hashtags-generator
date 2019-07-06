@@ -2,6 +2,12 @@
     position: relative;
 }
 
+.ButtonCopy button {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color: #2b2b2b;
+}
+
 .ButtonCopy button:focus {
     outline: none;
 }
