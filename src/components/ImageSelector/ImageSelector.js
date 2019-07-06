@@ -15,7 +15,7 @@ const ImageSelector = ({ onInputChange, onButtonSubmit, previewFile, mode }) => 
             mode === "link"
             ? <input className='ImageSelector-input-link' type='tex' placeholder="Paste a photo link..." onChange={onInputChange}/>
             : <div className="ImageSelector-file">
-                <label htmlFor="ImageSelector-input-file" className=''>Click or Tap here to select an image...</label>
+                <label htmlFor="ImageSelector-input-file" className='ImageSelector-label'>Click or Tap here to select an image...</label>
                 <input id="ImageSelector-input-file" className='ImageSelector-input-file' type='file' accept="image/*" onChange={previewFile}/>
               </div>
           }

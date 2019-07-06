@@ -27,6 +27,10 @@
   cursor: pointer;
 }
 
+.ImageSelector-label {
+  cursor: pointer;
+}
+
 .ImageSelector-button {
   flex-shrink: 0;
   border: 5px solid white;
