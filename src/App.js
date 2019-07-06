@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import * as Scroll from 'react-scroll';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import Switcher from './components/Switcher/Switcher';
+import ImageLinkForm from './components/ImageSelector/ImageSelector';
 import ButtonCopy from './components/ButtonCopy/ButtonCopy';
 import Hashtags from './components/Hashtags/Hashtags';
 import Footer from './components/Footer/Footer';
@@ -15,6 +16,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      mode: "upload",
       input: '',
       imageUrl: defaultImage,
       hashtags: [],
@@ -44,7 +46,7 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  scrollTo() {
+  scrollTo = () => {
     scroller.scrollTo('scroll-to-button', {
       duration: 800,
       delay: 1000,
@@ -53,16 +55,40 @@ class App extends Component {
     })
   }
 
+  switchMode = (mode) => {
+    mode === "link" ? this.setState({mode: "link"}) : this.setState({mode: "upload"});
+    this.setState({input: ''});
+    this.setState({hashtags: []});
+    this.setState({imageUrl: defaultImage});
+  }
+
+  previewFile = () => {
+      const file    = document.querySelector('input[type=file]').files[0];
+      const reader  = new FileReader();
+    
+      reader.addEventListener("load", () => {
+        this.setState({imageUrl: reader.result});
+        const filteredResult = reader.result.split(',')[1]
+        this.setState({input: filteredResult});
+      }, false);
+    
+      if (file) {
+        reader.readAsDataURL(file);
+        
+      }
+    }
+
   render() {
     const { imageUrl, hashtags } = this.state;
     const allHashtags = hashtags.join(' ');
     return (
       <div className="App">
         <div className="page-container">
-          <div className="content-wrap">
+          <div className="content-wrap">          
             <h1>Instagram Hashtags Generator</h1>
-            <h2>Paste a photo link and click the button to generate the hashtags!</h2>
-            <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} scrollTo={this.scrollTo} />
+            <h2>Load your image and click the button to generate the hashtags!</h2>
+            <Switcher switchMode={this.switchMode} />
+            <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} previewFile={this.previewFile} mode={this.state.mode} />            
             <ImageDisplay imageUrl={imageUrl} />
             {allHashtags.length ? <Element name="scroll-to-button"><ButtonCopy cssClass="AllHashtagsCopy" copyText={allHashtags} displayText="Click an hashtag to copy it, or click here to copy them all!" /></Element> : null}
             <Hashtags hashtags={hashtags} />

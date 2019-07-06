@@ -20,7 +20,6 @@ exports.handler = async (event, context) => {
 
   const params = JSON.parse(event.body);
   const input = params.input;
-  console.log(input)
 
   if (!params.input) {
     const message = "Required information is missing!";

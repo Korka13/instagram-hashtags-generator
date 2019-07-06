@@ -1,4 +1,4 @@
-.ImageLinkForm {
+.ImageSelector {
   margin: 1rem auto;
   height: 3rem;
   display: flex;
@@ -6,7 +6,7 @@
   max-width: 80vw;
 }
 
-.ImageLinkForm-form {
+.ImageSelector-input-link, .ImageSelector-file {
   flex-shrink: 0;
   /* border: 1px solid #FF55B5; */
   border: 1px solid #FF9E00;
@@ -21,7 +21,13 @@
   border-bottom-right-radius: .5rem;
 }
 
-.ImageLinkForm-button {
+.ImageSelector-file {
+  background-color: #fff;
+  line-height: 3rem;
+  cursor: pointer;
+}
+
+.ImageSelector-button {
   flex-shrink: 0;
   border: 5px solid white;
   height: 3rem;
@@ -33,23 +39,32 @@
   background-color: #ff9e00;
 }
 
-.ImageLinkForm-form:focus, .ImageLinkForm-button:focus {
+.ImageSelector-input-link:focus, .ImageSelector-button:focus {
   outline: none;
 }
 
-.ImageLinkForm-button img {
+.ImageSelector-button img {
   width: 100%;
   vertical-align: middle;
 }
 
+.ImageSelector-input-file {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
 @media only screen and (min-width: 375px) {
-  .ImageLinkForm-form {
+  .ImageSelector-input-link, .ImageSelector-file {
     width: 300px;
   }
 }
 
 @media only screen and (min-width: 750px) {
-  .ImageLinkForm-form {
+  .ImageSelector-input-link, .ImageSelector-file {
     width: 400px;
   }
 }
