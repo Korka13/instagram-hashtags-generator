@@ -2,7 +2,7 @@ import React from 'react';
 import './ImageSelector.css';
 import gear from './gearGray.svg';
 
-const ImageSelector = ({ onInputChange, onButtonSubmit, previewFile, mode }) => {
+const ImageSelector = ({ onInputChange, onButtonSubmit, fileChangedHandler, mode }) => {
   return (
         <div className='ImageSelector'>
           <button
@@ -16,7 +16,7 @@ const ImageSelector = ({ onInputChange, onButtonSubmit, previewFile, mode }) => 
             ? <input className='ImageSelector-input-link' type='tex' placeholder="Paste a photo link..." onChange={onInputChange}/>
             : <div className="ImageSelector-file">
                 <label htmlFor="ImageSelector-input-file" className='ImageSelector-label'>Click or Tap here to select an image...</label>
-                <input id="ImageSelector-input-file" className='ImageSelector-input-file' type='file' accept="image/*" onChange={previewFile}/>
+                <input id="ImageSelector-input-file" className='ImageSelector-input-file' type='file' accept="image/*" onChange={fileChangedHandler}/>
               </div>
           }
           

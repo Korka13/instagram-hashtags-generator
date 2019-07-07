@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import * as Scroll from 'react-scroll';
+import Resizer from 'react-image-file-resizer';
 import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import Switcher from './components/Switcher/Switcher';
-import ImageLinkForm from './components/ImageSelector/ImageSelector';
+import ImageSelector from './components/ImageSelector/ImageSelector';
 import ButtonCopy from './components/ButtonCopy/ButtonCopy';
 import Hashtags from './components/Hashtags/Hashtags';
 import Footer from './components/Footer/Footer';
@@ -62,21 +63,29 @@ class App extends Component {
     this.setState({imageUrl: defaultImage});
   }
 
-  previewFile = () => {
-      const file    = document.querySelector('input[type=file]').files[0];
-      const reader  = new FileReader();
-    
-      reader.addEventListener("load", () => {
-        this.setState({imageUrl: reader.result});
-        const filteredResult = reader.result.split(',')[1]
-        this.setState({input: filteredResult});
-      }, false);
-    
-      if (file) {
-        reader.readAsDataURL(file);
-        
-      }
-    }
+fileChangedHandler = (event) => {
+  var fileInput = false
+  if(event.target.files[0]) {
+      fileInput = true
+  }
+  if(fileInput) {
+      Resizer.imageFileResizer(
+          event.target.files[0],
+          300,
+          300,
+          'JPEG',
+          100,
+          0,
+          uri => {
+              console.log(uri)
+              this.setState({imageUrl: uri});
+              const filteredResult = uri.split(',')[1];
+              this.setState({input: filteredResult});
+          },
+          'base64'
+      );
+  }
+}
 
   render() {
     const { imageUrl, hashtags } = this.state;
@@ -88,7 +97,7 @@ class App extends Component {
             <h1>Instagram Hashtags Generator</h1>
             <h2>Load your image and click the button to generate the hashtags!</h2>
             <Switcher switchMode={this.switchMode} />
-            <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} previewFile={this.previewFile} mode={this.state.mode} />            
+            <ImageSelector onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} fileChangedHandler={this.fileChangedHandler} mode={this.state.mode} />            
             <ImageDisplay imageUrl={imageUrl} />
             {allHashtags.length ? <Element name="scroll-to-button"><ButtonCopy cssClass="AllHashtagsCopy" copyText={allHashtags} displayText="Click an hashtag to copy it, or click here to copy them all!" /></Element> : null}
             <Hashtags hashtags={hashtags} />
