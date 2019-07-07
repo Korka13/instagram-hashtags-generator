@@ -77,10 +77,10 @@ fileChangedHandler = (event) => {
           100,
           0,
           uri => {
-              console.log(uri)
               this.setState({imageUrl: uri});
               const filteredResult = uri.split(',')[1];
               this.setState({input: filteredResult});
+              this.setState({hashtags: []});
           },
           'base64'
       );
