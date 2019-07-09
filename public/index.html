@@ -4,15 +4,22 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-
+    <meta name="theme-color" content="#3f6d70" />
+    <meta name="description" content="Upload a picture or use a link to generate relevant hashtags. Then copy them with a click and go publish your photo on Instagram!">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124901497-9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-124901497-9');
+    </script>
     <title>Instagram Hashtags Generator</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
   </body>
 </html>
