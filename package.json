@@ -1,11 +1,11 @@
 {
-  "name": "newapp",
+  "name": "instagram-hashtag-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "clarifai": "^2.9.0",
     "dotenv": "^8.0.0",
-    "netlify-lambda": "^1.4.13",
+    "netlify-lambda": "^1.5.0",
     "react": "^16.8.6",
     "react-copy-to-clipboard": "^5.0.1",
     "react-delay": "^0.1.0",
