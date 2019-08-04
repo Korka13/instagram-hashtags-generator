@@ -7,11 +7,12 @@ import ImageSelector from './components/ImageSelector/ImageSelector';
 import ButtonCopy from './components/ButtonCopy/ButtonCopy';
 import Hashtags from './components/Hashtags/Hashtags';
 import Footer from './components/Footer/Footer';
+import lemureImg from './lemure.png'
 import './App.css';
 
 const Element = Scroll.Element;
 const scroller = Scroll.scroller;
-const defaultImage = 'https://ui-ex.com/images/freeswimming-clipart-swimming-animal-1.jpg'
+const defaultImage = lemureImg;
 
 class App extends Component {
   constructor() {
@@ -98,7 +99,7 @@ fileChangedHandler = (event) => {
             <h2>Load your image and click the button to generate the hashtags!</h2>
             <Switcher switchMode={this.switchMode} />
             <ImageSelector onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} fileChangedHandler={this.fileChangedHandler} mode={this.state.mode} />            
-            <ImageDisplay imageUrl={imageUrl} />
+            <ImageDisplay imageUrl={imageUrl} defaultImage={defaultImage} />
             {allHashtags.length ? <Element name="scroll-to-button"><ButtonCopy cssClass="AllHashtagsCopy" copyText={allHashtags} displayText="Click an hashtag to copy it, or click here to copy them all!" /></Element> : null}
             <Hashtags hashtags={hashtags} />
           </div>

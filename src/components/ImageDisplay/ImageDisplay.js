@@ -1,9 +1,9 @@
 import React from 'react';
 import './ImageDisplay.css'
 
-const ImageDisplay = ({ imageUrl }) => {
+const ImageDisplay = ({ imageUrl, defaultImage }) => {
   const addDefaultSrc = (ev) => {
-    ev.target.src = 'https://st.ilfattoquotidiano.it/wp-content/uploads/2018/03/03/instagram275.jpg'
+    ev.target.src = defaultImage;
   }
   return (
     <div className='ImageDisplay'>
