@@ -11,7 +11,7 @@
     "react-delay": "^0.1.0",
     "react-dom": "^16.8.6",
     "react-image-file-resizer": "^0.2.0",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-scroll": "^1.7.12",
     "react-tilt": "^0.1.4"
   },
